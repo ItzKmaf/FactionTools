@@ -1,0 +1,10 @@
+version: 1.0.0
+name: "FactionTools"
+description: "A nice plugin that adds FactionTools to your server."
+authors: [ItzKmaf]
+main: com.kmaf.TrenchTools.FactionTools
+
+commands:
+  factiontools:
+    description: "The Main command for the plugin"
+    aliases: [ft, factiont]
