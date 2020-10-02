@@ -3,6 +3,7 @@ name: "FactionTools"
 description: "A nice plugin that adds FactionTools to your server."
 authors: [ItzKmaf]
 main: com.kmaf.TrenchTools.FactionTools
+api-version: 1.16
 
 commands:
   factiontools:

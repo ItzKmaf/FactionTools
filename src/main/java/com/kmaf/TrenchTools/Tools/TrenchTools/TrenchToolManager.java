@@ -45,13 +45,16 @@ public class TrenchToolManager {
 			ConfigurationSection child = cs.getConfigurationSection(key);
 			
 			// Checking if DisplayName is in the section and also if it is valid.
-			if (!child.isString("DisplayName")) {
-				throw new InvalidConfigurationValue(trenchConfig, child.getCurrentPath() + ".DisplayName", "DisplayName value must be a string (Is it surrounded by \"\"?)");
+			if (child == null) {
+				throw new InvalidConfigurationValue(trenchConfig, cs.getCurrentPath() + "." + key, "Error, Configuration Section does not exist");
 			}
-			String DisplayName = child.getString("DisplayName");
+			if (!child.isString("displayName")) {
+				throw new InvalidConfigurationValue(trenchConfig, child.getCurrentPath() + ".displayName", "displayName value must be a string (Is it surrounded by \"\"?)");
+			}
+			String DisplayName = child.getString("displayName");
 			System.out.println(DisplayName);
 			if (DisplayName == null || DisplayName.trim().equals("")) {
-				throw new InvalidConfigurationValue(trenchConfig, child.getCurrentPath() + ".DisplayName", "DisplayName Value is missing. (name: \"NameOfTrenchTool\")");
+				throw new InvalidConfigurationValue(trenchConfig, child.getCurrentPath() + ".displayName", "displayName Value is missing. (name: \"NameOfTrenchTool\")");
 			}
 			
 			// Checking if diameter is in the section and also if it is valid.

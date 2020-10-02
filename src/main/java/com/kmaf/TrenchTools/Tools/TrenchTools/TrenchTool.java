@@ -1,6 +1,7 @@
 package com.kmaf.TrenchTools.Tools.TrenchTools;
 
 import com.kmaf.TrenchTools.Tools.Tool;
+import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 
 public class TrenchTool implements Tool {
@@ -44,7 +45,7 @@ public class TrenchTool implements Tool {
 			if (displayName.trim().equals("")) {
 				throw new IllegalArgumentException("Name of tool cannot be empty. (\"\")");
 			}
-			this.displayName = displayName;
+			this.displayName = ChatColor.translateAlternateColorCodes('&',displayName);
 		}
 		
 		/**
@@ -66,13 +67,13 @@ public class TrenchTool implements Tool {
 		}
 		
 		public void setConfigName(String configName) {
-			if (displayName == null) {
+			if (configName == null) {
 				throw new NullPointerException("Configuration Name of tool cannot be null.");
 			}
-			if (displayName.trim().equals("")) {
+			if (configName.trim().equals("")) {
 				throw new IllegalArgumentException("Configuration Name of tool cannot be empty. (\"\")");
 			}
-			if (!displayName.replace(" ", "").equals(displayName)) {
+			if (!configName.replace(" ", "").equals(configName)) {
 				throw new IllegalArgumentException("Configuration Name of tool cannot include spaces");
 			}
 			this.configName = configName;

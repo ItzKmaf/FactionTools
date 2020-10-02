@@ -1,4 +1,4 @@
 tools:
   5x5:
-    name: "&8[&55x5 Trench Pickaxe&8]"
+    displayName: "&8[&55x5 Trench Pickaxe&8]"
     diameter: 5
